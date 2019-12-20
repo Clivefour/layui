@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/layui/jquery-2.1.0.min.js"></script>
+</head>
+<body>
+<div id="div1">
+
+</div>
+<script type="text/javascript">
+    var json = [{id:1,groupName:"主体",itemCatId:560,paramKeyList:[{id:1,paramName:"品牌",groupId:1},{id:2,paramName:"型号",groupId:1}]},{id:2,groupName:"网络",itemCatId:560,paramKeyList:[{id:3,paramName:"4G",groupId:2},{id:4,paramName:"3G",groupId:2}]}];
+    $.each(json, function(i, n){
+        $("#div1").append("<table id="+n.id+"><h3>"+n.groupName+"</h3></table>");
+        $.each(n.paramKeyList, function(j, n2){
+            $("#"+n.id).append("<tr><td>"+n2.paramName+":<input type='text' name='paramValue'/></td></tr>");
+        });
+    });
+</script>
+</body>
+</html>
